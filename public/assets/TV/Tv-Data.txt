@@ -1,6 +1,7 @@
 [
   {
     "product": "TV",
+            "image": "/assets/TV/1.jpg",
     "brand": "LG",
     "model": "OLED CX Series",
     "price": "1999.00",

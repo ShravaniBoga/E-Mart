@@ -1,6 +1,7 @@
 
 import { mobileData } from "../data/mobiles"
 
+
 const Mobiles = () => {
     const firstFiveImages = mobileData.slice(0, 5)
 
@@ -10,9 +11,11 @@ const Mobiles = () => {
             <div className='proSection'>
                 {firstFiveImages.map((item) => {
                     return (
+
                         <div className='imgBox'>
                             <img className='proImage' src={item.image} alt="" />
                         </div>
+
 
                     )
 
