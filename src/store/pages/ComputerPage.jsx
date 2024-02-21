@@ -17,11 +17,14 @@ const ComputerPage = (mango) => {
             setSelectedProduct(updatedProduct)
             // new array = ha with ms new array is formed    array - ms
         } else {
-            setSelectedProduct([mango])
+            setSelectedProduct([...selectedProduct, mango])
             // mango=microsoftcopany   ""here""
             // push ms inside select product
         }
     }
+
+    const filteredProduct = selectedProduct.length === 0 ? computerData : computerData.filter((orange) => selectedProduct.includes(orange.company))
+
 
     return (
         <>
@@ -33,6 +36,7 @@ const ComputerPage = (mango) => {
                         return (
                             <div className='pro-input'>
                                 <label>
+                                    {/* # label is use like this if click on leable also it will be checked  */}
                                     <input type="checkbox"
                                         checked={selectedProduct.includes(comp.company)}
                                         // example =if we checked microsoft company
@@ -48,7 +52,7 @@ const ComputerPage = (mango) => {
                 </div>
                 <div className='pageSection'>
 
-                    {computerData.map((item) => {
+                    {filteredProduct.map((item) => {
                         return (
                             <div>
                                 <Link to={`/computer/${item.id}`}>
